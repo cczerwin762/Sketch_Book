@@ -20,7 +20,6 @@ class sketchPad():
         self.menu.add_cascade(label = "Help", menu = self.help)
         self.file.add_command(label = "Save", command=self.save_callback)
         self.help.add_command(label = "How to Use", command = self.display_help)
-        # Make into an executable
         self.root.config(menu=self.menu)
         self.img = None
         self.canvas.pack(side = tk.BOTTOM)
@@ -83,7 +82,8 @@ class sketchPad():
         self.text.insert(tk.END,
                         "Welcome!\n"
                         "- Click and drag mouse to draw,\n- Right click to clear,\n- Middle click to change cursor color,\n"
-                        "- Press space to clear image and change background color.")
+                        "- Press space to clear image and change background color.\nIf you'd like to save, unfortunately at this time,"
+                        "the background color used must be white and cursor black. White on black is not yet functional")
         self.howto.mainloop()
 
     def save_as_jpeg(self):
